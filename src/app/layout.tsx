@@ -1,8 +1,11 @@
+
+import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/custom/header";
+import { ModeToggle } from "@/components/toggle";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
@@ -22,10 +25,19 @@ export default function RootLayout({
           "min-h-screen bg-background font-manrope antialiased",
           manrope.variable
         )}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
 
-          <Header/>
-          <main> {children}</main>
-          
+          <Header/> 
+        
+          <main> 
+         
+            {children}</main>
+          </ThemeProvider>
          </body>
     </html>
   );

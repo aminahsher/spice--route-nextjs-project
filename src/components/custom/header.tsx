@@ -4,13 +4,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import Link from 'next/link'
 import { Phone, ShoppingBasket } from 'lucide-react'
 import { Button } from '../ui/button'
+import { ModeToggle } from '../toggle'
 
 const Header = () => {
   return (
     
      <header className='bg-orange-200'>
         <nav className='container py-2 flex items-center justify-between'>
+       
             <div className='flex items-center space-x-4'>
+            <ModeToggle/> 
                 <Image src= {"/food.png" } alt= "logo" width={100} height={100} className='h-20 w-20 rounded-full'/>
                 <Select>
   <SelectTrigger className="w-[150px] focus:ring-0">
